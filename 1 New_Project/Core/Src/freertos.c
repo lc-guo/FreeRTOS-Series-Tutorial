@@ -54,20 +54,6 @@ const osThreadAttr_t defaultTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for green_led */
-osThreadId_t green_ledHandle;
-const osThreadAttr_t green_led_attributes = {
-  .name = "green_led",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
-};
-/* Definitions for red_led */
-osThreadId_t red_ledHandle;
-const osThreadAttr_t red_led_attributes = {
-  .name = "red_led",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
-};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -75,8 +61,6 @@ const osThreadAttr_t red_led_attributes = {
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
-void GREEN_LED_Task(void *argument);
-void RED_LED_Task(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -110,12 +94,6 @@ void MX_FREERTOS_Init(void) {
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
-  /* creation of green_led */
-  green_ledHandle = osThreadNew(GREEN_LED_Task, NULL, &green_led_attributes);
-
-  /* creation of red_led */
-  red_ledHandle = osThreadNew(RED_LED_Task, NULL, &red_led_attributes);
-
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -142,44 +120,6 @@ void StartDefaultTask(void *argument)
     osDelay(1);
   }
   /* USER CODE END StartDefaultTask */
-}
-
-/* USER CODE BEGIN Header_GREEN_LED_Task */
-/**
-* @brief Function implementing the green_led thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_GREEN_LED_Task */
-void GREEN_LED_Task(void *argument)
-{
-  /* USER CODE BEGIN GREEN_LED_Task */
-  /* Infinite loop */
-  for(;;)
-  {
-		HAL_GPIO_TogglePin(GREEN_LED_GPIO_Port,GREEN_LED_Pin);
-    osDelay(500);
-  }
-  /* USER CODE END GREEN_LED_Task */
-}
-
-/* USER CODE BEGIN Header_RED_LED_Task */
-/**
-* @brief Function implementing the red_led thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_RED_LED_Task */
-void RED_LED_Task(void *argument)
-{
-  /* USER CODE BEGIN RED_LED_Task */
-  /* Infinite loop */
-  for(;;)
-  {
-		HAL_GPIO_TogglePin(RED_LED_GPIO_Port,RED_LED_Pin);
-    osDelay(100);
-  }
-  /* USER CODE END RED_LED_Task */
 }
 
 /* Private application code --------------------------------------------------*/
