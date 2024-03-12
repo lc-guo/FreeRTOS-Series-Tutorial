@@ -138,10 +138,10 @@ void TASK_ADC(void *argument)
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
-/*转换完成中断回调*/
+/*转      卸匣氐 */
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
 {
-    /*定时器中断启动单通道转换*/
+    /*  时   卸      通  转  */
     if(hadc->Instance == ADC1)
     {
         adc_value = HAL_ADC_GetValue(hadc);
