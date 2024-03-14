@@ -19,13 +19,11 @@ This github repository is the source code of the supporting project for the Free
 
 * [FreeRTOS教程7 事件组](https://blog.csdn.net/lc_guo/article/details/136654897)
 
-* [FreeRTOS教程8 任务通知]()
+* [FreeRTOS教程8 任务通知](https://blog.csdn.net/lc_guo/article/details/136700777)
 
-* [FreeRTOS教程9 缓冲区]()
+* [FreeRTOS教程9 软件定时器](https://blog.csdn.net/lc_guo/article/details/136713318)
 
-* [FreeRTOS教程10 软件定时器]()
-
-* [FreeRTOS教程11 低功耗]()
+* [FreeRTOS教程10 低功耗](https://blog.csdn.net/lc_guo/article/details/136721473)
 
 * ......
 
