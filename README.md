@@ -1,6 +1,6 @@
 # FreeRTOS-Series-Tutorial
 
-This github repository is the source code of the supporting project for the FreeRTOS Series Tutorials, The following are all CSDN links for this series of tutorials.
+This github repository is the source code of the project for the FreeRTOS Series Tutorials, The following are all CSDN links for this series of tutorials.
 
 ---
 
